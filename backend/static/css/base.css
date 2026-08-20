@@ -62,11 +62,11 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 
-.stack-mark {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 3px;
-  height: 20px;
+.brand-icon {
+  height: 32px;
+  width: 32px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
 }
 .stack-mark span {
   width: 4px;

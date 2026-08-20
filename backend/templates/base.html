@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Stacked{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon_data.svg') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
@@ -12,6 +13,7 @@
 <body>
   <div class="topbar">
     <div class="brand">
+      <img src="{{ url_for('static', filename='img/favicon_data.svg') }}" alt="Stacked Icon" class="brand-icon">
       Stack, or Where You're Stacked?
     </div>
     <nav class="nav-links">
