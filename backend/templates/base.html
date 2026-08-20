@@ -12,7 +12,7 @@
 <body>
   <div class="topbar">
     <div class="brand">
-      Stacked
+      Stack, or Where You're Stacked?
     </div>
     <nav class="nav-links">
       <a href="{{ url_for('insights.insights_page') }}" class="{{ 'active' if request.endpoint == 'insights.insights_page' or request.endpoint == 'home' else '' }}">Insights</a>
@@ -25,10 +25,6 @@
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="app-footer">
-    Stack, or Where You're Stacked?
-  </footer>
-s
   <script src="{{ url_for('static', filename='js/vendor/chart.umd.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/api.js') }}"></script>
   <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
