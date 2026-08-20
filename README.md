@@ -64,7 +64,7 @@ stacked/
 
 3. Start the Flask app:
    ```bash
-   python app.py
+   python run.py
    ```
 
 4. Open `http://localhost:5000` in your browser.
