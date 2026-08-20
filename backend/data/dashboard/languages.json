@@ -1,0 +1,124 @@
+{
+  "language_stats": [
+    {
+      "Language": "Ruby",
+      "median_comp": 92470.0,
+      "median_exp": 10.0,
+      "developer_count": 1235
+    },
+    {
+      "Language": "Groovy",
+      "median_comp": 82526.0,
+      "median_exp": 10.0,
+      "developer_count": 805
+    },
+    {
+      "Language": "Go",
+      "median_comp": 80555.0,
+      "median_exp": 8.0,
+      "developer_count": 3032
+    },
+    {
+      "Language": "Rust",
+      "median_comp": 79861.5,
+      "median_exp": 7.0,
+      "developer_count": 2566
+    },
+    {
+      "Language": "Bash/Shell (all shells)",
+      "median_comp": 78407.0,
+      "median_exp": 8.0,
+      "developer_count": 7453
+    },
+    {
+      "Language": "Swift",
+      "median_comp": 77332.0,
+      "median_exp": 9.0,
+      "developer_count": 947
+    },
+    {
+      "Language": "Lua",
+      "median_comp": 76637.0,
+      "median_exp": 7.0,
+      "developer_count": 1067
+    },
+    {
+      "Language": "PowerShell",
+      "median_comp": 75184.0,
+      "median_exp": 9.0,
+      "developer_count": 2975
+    },
+    {
+      "Language": "Python",
+      "median_comp": 72284.0,
+      "median_exp": 7.0,
+      "developer_count": 9503
+    },
+    {
+      "Language": "TypeScript",
+      "median_comp": 70584.0,
+      "median_exp": 8.0,
+      "developer_count": 8952
+    },
+    {
+      "Language": "Kotlin",
+      "median_comp": 70275.0,
+      "median_exp": 8.0,
+      "developer_count": 1957
+    },
+    {
+      "Language": "C#",
+      "median_comp": 70000.0,
+      "median_exp": 9.0,
+      "developer_count": 5877
+    },
+    {
+      "Language": "SQL",
+      "median_comp": 69814.0,
+      "median_exp": 8.0,
+      "developer_count": 11187
+    },
+    {
+      "Language": "C++",
+      "median_comp": 68740.0,
+      "median_exp": 7.0,
+      "developer_count": 3691
+    },
+    {
+      "Language": "JavaScript",
+      "median_comp": 67983.0,
+      "median_exp": 8.0,
+      "developer_count": 12805
+    },
+    {
+      "Language": "C",
+      "median_comp": 67602.0,
+      "median_exp": 7.0,
+      "developer_count": 2997
+    },
+    {
+      "Language": "HTML/CSS",
+      "median_comp": 65745.5,
+      "median_exp": 8.0,
+      "developer_count": 10486
+    },
+    {
+      "Language": "Java",
+      "median_comp": 64908.5,
+      "median_exp": 8.0,
+      "developer_count": 5826
+    },
+    {
+      "Language": "PHP",
+      "median_comp": 54777.0,
+      "median_exp": 9.0,
+      "developer_count": 3473
+    },
+    {
+      "Language": "Dart",
+      "median_comp": 50955.0,
+      "median_exp": 6.0,
+      "developer_count": 1061
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Predict · Stacked{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <span class="eyebrow">Salary predictor</span>
+  <h1>What would you make?</h1>
+  <p>A Random Forest trained on 19,990 professional developers from the 2024 Stack Overflow survey. Enter a profile and get an estimate of a possible salary.</p>
+</div>
+
+<div class="two-col" style="align-items: stretch;">
+  <div class="card">
+    <div class="card-title">Your profile</div>
+    <form id="predict-form" action="javascript:void(0);" onsubmit="event.preventDefault(); return false;">
+      <div class="field">
+        <label for="years">Years of professional experience</label>
+        <div class="range-row">
+          <input type="range" id="years" min="0" max="50" step="0.5" value="5">
+          <span class="range-value num" id="years-value">5</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="country">Country</label>
+        <select id="country"></select>
+      </div>
+
+      <div class="field">
+        <label for="ed-level">Education level</label>
+        <select id="ed-level"></select>
+      </div>
+
+      <div class="field">
+        <label for="remote-work">Work arrangement</label>
+        <select id="remote-work"></select>
+      </div>
+
+      <div class="field">
+        <label>Languages used in the past year</label>
+        <div class="chip-group" id="language-chips"></div>
+        <div class="hint">Based on the model, language choice barely moves the estimate once country and experience are set (see the dashboard for details).</div>
+      </div>
+
+      <button type="button" class="btn btn-primary" id="predict-btn">Estimate salary</button>
+    </form>
+  </div>
+
+  <div class="card result-card" id="result-card">
+    <div class="card-title" style="width: 100%;">Estimated annual compensation</div>
+    <div class="empty-state" id="result-empty" style="margin: auto 0; text-align: center;">Fill in your profile and estimate to see a prediction here.</div>
+    <div id="result-content" style="display:none; width: 100%; margin: auto 0; text-align: center;">
+      <div class="result-figure num" id="result-figure">$0</div>
+      <div class="result-range num" id="result-range">$0 to $0 likely range</div>
+      <div class="result-meta">
+        <div class="stat">
+          <div class="value num" id="meta-r2">-</div>
+          <div class="label">Model R²</div>
+        </div>
+        <div class="stat">
+          <div class="value num" id="meta-mape">-</div>
+          <div class="label">Typical error</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Stacked{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      Stacked
+    </div>
+    <nav class="nav-links">
+      <a href="{{ url_for('insights.insights_page') }}" class="{{ 'active' if request.endpoint == 'insights.insights_page' or request.endpoint == 'home' else '' }}">Insights</a>
+      <a href="{{ url_for('predict.predict_page') }}" class="{{ 'active' if request.endpoint == 'predict.predict_page' else '' }}">Predict</a>
+      <a href="{{ url_for('dashboard.dashboard_page') }}" class="{{ 'active' if request.endpoint == 'dashboard.dashboard_page' else '' }}">Dashboard</a>
+    </nav>
+  </div>
+
+  <main class="app-shell">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="app-footer">
+    Stack, or Where You're Stacked?
+  </footer>
+
+  <!-- Vendored locally (not loaded from a CDN) so the dashboard doesn't
+       break under network restrictions, ad-blockers, or offline dev. -->
+  <script src="{{ url_for('static', filename='js/vendor/chart.umd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

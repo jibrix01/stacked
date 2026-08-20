@@ -1,0 +1,43 @@
+{
+  "metrics": {
+    "ridge": {
+      "r2": 0.5388,
+      "mae_usd": 30861.41,
+      "mape": 0.524
+    },
+    "random_forest": {
+      "r2": 0.5581,
+      "mae_usd": 30056.64,
+      "mape": 0.5121
+    }
+  },
+  "feature_importance": {
+    "Experience (years)": 0.31970304923619924,
+    "Country": 0.6092185798619909,
+    "Education": 0.022916400517260963,
+    "Remote status": 0.014121909718708057,
+    "JavaScript": 0.004401095737895749,
+    "Python": 0.004201110752526506,
+    "Java": 0.0022278937637923804,
+    "TypeScript": 0.004539785399595946,
+    "C#": 0.003603426264417972,
+    "Go": 0.006290044702016696,
+    "Rust": 0.0043005791163410485,
+    "SQL": 0.004476124929254581
+  },
+  "is_language": {
+    "JavaScript": true,
+    "Python": true,
+    "Java": true,
+    "TypeScript": true,
+    "C#": true,
+    "Go": true,
+    "Rust": true,
+    "SQL": true
+  },
+  "mape_by_country": {
+    "United States": 0.3999,
+    "Germany": 0.4681,
+    "India": 0.6442
+  }
+}

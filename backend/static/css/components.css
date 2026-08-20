@@ -1,0 +1,269 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.card + .card { margin-top: var(--space-5); }
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card-title .dot {
+  display: none;
+}
+
+/* --- Form controls --- */
+.field { margin-bottom: var(--space-5); }
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.field .hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+select, input[type="number"], input[type="range"] {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: border-color 0.15s var(--ease);
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+input[type="range"] {
+  border: none;
+  background: transparent;
+  padding: 0;
+  height: 6px;
+  accent-color: var(--accent);
+}
+
+.range-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.range-row .range-value {
+  min-width: 4.5ch;
+  text-align: right;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.two-col > *,
+.chart-grid > * {
+  margin-top: 0 !important;
+  height: 100%;
+}
+
+/* Language chip multiselect */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.chip:hover { border-color: var(--accent); color: var(--text-primary); }
+
+.chip.selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-6);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.12s var(--ease), border-color 0.12s var(--ease), opacity 0.12s var(--ease);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  width: 100%;
+}
+
+.btn-primary:hover { background: var(--accent-dim); }
+.btn-primary:active { background: var(--accent-dim); }
+.btn-primary:disabled { opacity: 0.5; cursor: progress; }
+
+/* --- Prediction result --- */
+.result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: var(--space-6);
+  height: 100%;
+}
+
+.result-figure {
+  font-family: var(--font-mono);
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: var(--space-3) 0;
+}
+
+.result-range {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.result-meta {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-soft);
+}
+
+.result-meta .stat { text-align: center; }
+.result-meta .stat .value { font-family: var(--font-mono); font-size: 1.15rem; color: var(--text-primary); }
+.result-meta .stat .label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+.empty-state { color: var(--text-muted); text-align: center; padding: var(--space-4) 0; font-size: 0.9rem; }
+.error-banner {
+  background: rgba(224, 90, 78, 0.08);
+  border: 1px solid rgba(224, 90, 78, 0.35);
+  color: var(--negative);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-4);
+}
+
+/* --- Dashboard tabs --- */
+.tab-select-wrap { margin-bottom: var(--space-6); }
+
+.tab-select {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+}
+
+.tab-select button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+
+.tab-select button:hover { color: var(--text-primary); }
+
+.tab-select button.active {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.chart-grid .card.full { grid-column: 1 / -1; }
+
+.chart-canvas-wrap { position: relative; height: 300px; }
+.chart-canvas-wrap.tall { height: 380px; }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.stat-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.stat-box .value { font-family: var(--font-mono); font-size: 1.4rem; color: var(--accent); }
+.stat-box .label { font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-1); }
+
+/* Loading state: a flat, single-hue (grayscale) fade sweep — not a brand
+   gradient, just a conventional shimmer built from the surface tones. */
+.loading-skeleton {
+  height: 300px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.notebook-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 860px) {
+  .chart-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: 1fr; }
+}

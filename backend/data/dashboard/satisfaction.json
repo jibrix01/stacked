@@ -1,0 +1,70 @@
+{
+  "n": 13640,
+  "correlation_matrix": {
+    "labels": [
+      "Job satisfaction",
+      "Pay (log)",
+      "Knowledge silos",
+      "Search friction",
+      "Experience"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.079,
+        -0.235,
+        0.294,
+        0.093
+      ],
+      [
+        0.079,
+        1.0,
+        0.049,
+        -0.077,
+        0.407
+      ],
+      [
+        -0.235,
+        0.049,
+        1.0,
+        -0.288,
+        0.018
+      ],
+      [
+        0.294,
+        -0.077,
+        -0.288,
+        1.0,
+        0.002
+      ],
+      [
+        0.093,
+        0.407,
+        0.018,
+        0.002,
+        1.0
+      ]
+    ]
+  },
+  "raw_vs_controlled": {
+    "labels": [
+      "Pay (log)",
+      "Knowledge silos",
+      "Search friction",
+      "Experience"
+    ],
+    "raw_correlation": [
+      0.079,
+      -0.235,
+      0.294,
+      0.093
+    ],
+    "controlled_coefficient": [
+      0.275,
+      -0.349,
+      0.52,
+      0.116
+    ]
+  },
+  "controlled_r2": 0.131
+}

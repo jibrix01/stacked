@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · Stacked{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <span class="eyebrow">Case study dashboard</span>
+  <h1>The Data, Unraveled</h1>
+  <p>An interactive walk through the full analysis and charts used in the case study.</p>
+</div>
+
+<div class="tab-select-wrap">
+  <div class="tab-select" id="tab-select">
+    <button data-section="overview" class="active">Overview</button>
+    <button data-section="pay_by_country">Pay by Country</button>
+    <button data-section="languages">Languages</button>
+    <button data-section="satisfaction">Satisfaction</button>
+    <button data-section="model_insights">The Model</button>
+  </div>
+</div>
+
+<div id="dashboard-panel">
+  <div class="loading-skeleton"></div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

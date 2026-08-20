@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Insights · Stacked{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <span class="eyebrow">Case Study Analysis & Key Findings</span>
+  <h1>Summary</h1>
+  <p>An empirical analysis of the 2024 Stack Overflow Developer Survey (testing popular narratives on developer pay, remote work, technical stacks, and job satisfaction against data from 19,990 professional developers across 185 countries).</p>
+</div>
+
+<div class="card" style="margin-bottom: var(--space-5);">
+  <div class="card-title">Introduction & Background</div>
+  <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+    The 2024 Stack Overflow Developer Survey is one of the most-cited datasets in tech hiring conversations, used to argue everything from which programming language to learn to whether remote work pays better. This case study tests those claims directly: does location, experience, tech stack, or remote status actually move the needle on pay and job satisfaction, or do the popular narratives fall apart once the obvious confounds are controlled for?
+  </p>
+  <p style="color: var(--text-secondary); line-height: 1.6;">
+    Dataset used: <a href="https://www.kaggle.com/datasets/berkayalan/stack-overflow-annual-developer-survey-2024" target="_blank" style="color: var(--accent); text-decoration: underline; font-weight: 500;">Stack Overflow Annual Developer Survey 2024</a>
+  </p>
+</div>
+
+<div class="card-grid" style="display: flex; flex-direction: column; gap: var(--space-5);">
+
+  <div class="card">
+    <div class="card-title">Q1: Do technical choices and remote work drive higher pay, or is it just experience and location?</div>
+    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+      <strong>Answer: Mostly experience and location.</strong> Languages like Go and Rust look like they pay more at a glance, but developers who use them also tend to be more senior. Once experience and country are in the model, no single language explains more than about 1% of the pay variance.
+    </p>
+    <p style="color: var(--text-secondary); line-height: 1.6;">
+      Similarly, remote workers report higher pay than in-person workers (e.g., in the US sample, remote median pay is $155,000 vs. $110,000 in-person). However, remote workers in this dataset are also significantly more senior (12 years of median experience vs. 7 years for in-person). Remote work status itself accounts for only about 1.5% of the model's total explanatory power once location and seniority are accounted for.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q2: How much predictive power do location and tenure actually hold, and how much pay variance remains unexplained?</div>
+    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+      <strong>Answer: About half.</strong> Country and years of experience account for almost all of what a regression model can explain about global developer pay (R² ≈ 0.54). Country sets the base floor (US and UK medians run 3 to 4 times India's, and that gap holds across all experience levels).
+    </p>
+    <p style="color: var(--text-secondary); line-height: 1.6;">
+      Education level, remote status, and choice of programming languages barely move the needle once location and experience are known. The remaining ~46% of variance comes down to factors uncaptured by the survey: individual negotiation, specific employer, company stage, equity, and niche domain expertise.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q3: What factors actually correlate with high job satisfaction: financial compensation or daily operational workflow efficiency?</div>
+    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+      <strong>Answer: Day-to-day workflow friction, far more than pay.</strong> Knowledge silos (r ≈ -0.24) and search friction / struggling to find answers quickly (r ≈ 0.29) both correlate with job satisfaction much more strongly than pay does (r ≈ 0.08).
+    </p>
+    <p style="color: var(--text-secondary); line-height: 1.6;">
+      Getting unblocked quickly tracks with reported happiness at work more than salary does. This pattern holds even after controlling for country: high earners stuck in high-friction environments still report less satisfaction than lower earners working in smoother, well-integrated setups.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q4: How effectively can standard predictive algorithms estimate developer salaries, and where do they run into limitations?</div>
+    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+      <strong>Answer: Decently on overall trends, but with large individual error margins.</strong> A 5-fold cross-validated <strong>Random Forest model</strong> (trained on 19,990 professional developers) edges out a baseline Ridge regression by about two points of R² (0.56 vs. 0.54). This slight improvement is a small return for a much heavier model, because the real signal sits in just two features: country and experience.
+    </p>
+    <p style="color: var(--text-secondary); line-height: 1.6;">
+      Furthermore, even the Random Forest model is off by about 50% on a typical individual prediction. The error is not spread evenly: it is ~40% for US respondents, ~47% for German respondents, and ~64% for Indian respondents. The model is least reliable exactly where dollar amounts are smallest and local context matters most.
+    </p>
+  </div>
+
+</div>
+
+<div class="card" style="margin-top: var(--space-6); background: var(--surface-2); border-color: var(--border-soft);">
+  <div class="card-title">Explore the Interactive App</div>
+  <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+    Now that you've read the core insights from the case study, test out the data and interactive tools:
+  </p>
+  <div class="two-col">
+    <div class="stat-box" style="background: var(--surface);">
+      <div class="label" style="text-transform: uppercase; font-family: var(--font-mono); color: var(--accent); margin-bottom: var(--space-2);">Visualizations</div>
+      <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: var(--space-2);">Explore the Dashboard</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--space-4);">Browse interactive charts for pay distributions, country breakdowns, language comparisons, and satisfaction heatmaps.</p>
+      <a href="{{ url_for('dashboard.dashboard_page') }}" class="btn btn-primary" style="width: auto; display: inline-flex;">View Dashboard &rarr;</a>
+    </div>
+
+    <div class="stat-box" style="background: var(--surface);">
+      <div class="label" style="text-transform: uppercase; font-family: var(--font-mono); color: var(--accent); margin-bottom: var(--space-2);">Predictor</div>
+      <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: var(--space-2);">Estimate Your Salary</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--space-4);">Input your experience, country, education, and tech stack to get an estimated salary range from our trained Random Forest model.</p>
+      <a href="{{ url_for('predict.predict_page') }}" class="btn btn-primary" style="width: auto; display: inline-flex;">Try Salary Predictor &rarr;</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

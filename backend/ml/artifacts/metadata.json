@@ -1,0 +1,97 @@
+{
+  "model_type": "RandomForestRegressor",
+  "target": "log10(ConvertedCompYearly)",
+  "training_rows": 19933,
+  "metrics": {
+    "ridge": {
+      "r2": 0.5388,
+      "mae_usd": 30861.41,
+      "mape": 0.524
+    },
+    "random_forest": {
+      "r2": 0.5581,
+      "mae_usd": 30056.64,
+      "mape": 0.5121
+    }
+  },
+  "feature_importance": {
+    "YearsCodePro_num": 0.31970304923619924,
+    "Country_Grouped": 0.6092185798619909,
+    "EdLevel": 0.022916400517260963,
+    "RemoteWork": 0.014121909718708057,
+    "lang_JavaScript": 0.004401095737895749,
+    "lang_Python": 0.004201110752526506,
+    "lang_Java": 0.0022278937637923804,
+    "lang_TypeScript": 0.004539785399595946,
+    "lang_C#": 0.003603426264417972,
+    "lang_Go": 0.006290044702016696,
+    "lang_Rust": 0.0043005791163410485,
+    "lang_SQL": 0.004476124929254581
+  },
+  "mape_by_country": {
+    "United States of America": 0.3999,
+    "Germany": 0.4681,
+    "India": 0.6442
+  },
+  "options": {
+    "countries": [
+      "Australia",
+      "Austria",
+      "Belgium",
+      "Brazil",
+      "Canada",
+      "Czech Republic",
+      "Denmark",
+      "Finland",
+      "France",
+      "Germany",
+      "Greece",
+      "India",
+      "Israel",
+      "Italy",
+      "Netherlands",
+      "Norway",
+      "Poland",
+      "Portugal",
+      "Russian Federation",
+      "Spain",
+      "Sweden",
+      "Switzerland",
+      "Ukraine",
+      "United Kingdom of Great Britain and Northern Ireland",
+      "United States of America",
+      "Other"
+    ],
+    "ed_levels": [
+      "Associate degree (A.A., A.S., etc.)",
+      "Bachelor\u2019s degree (B.A., B.S., B.Eng., etc.)",
+      "Master\u2019s degree (M.A., M.S., M.Eng., MBA, etc.)",
+      "Primary/elementary school",
+      "Professional degree (JD, MD, Ph.D, Ed.D, etc.)",
+      "Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)",
+      "Some college/university study without earning a degree",
+      "Something else"
+    ],
+    "remote_work": [
+      "Hybrid (some remote, some in-person)",
+      "In-person",
+      "Remote"
+    ],
+    "languages": [
+      "JavaScript",
+      "Python",
+      "Java",
+      "TypeScript",
+      "C#",
+      "Go",
+      "Rust",
+      "SQL"
+    ]
+  },
+  "defaults": {
+    "YearsCodePro_num": 8.0,
+    "Country_Grouped": "United States of America",
+    "EdLevel": "Bachelor\u2019s degree (B.A., B.S., B.Eng., etc.)",
+    "RemoteWork": "Hybrid (some remote, some in-person)"
+  }
+}
