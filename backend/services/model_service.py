@@ -1,7 +1,3 @@
-"""
-Wraps the trained model so routes never touch sklearn directly.
-Loaded once at import time and reused across requests.
-"""
 import json
 
 import joblib
@@ -30,13 +26,6 @@ def _load_metadata():
 
 
 def _load_model():
-    """Loads model.joblib lazily, only when a prediction is actually requested.
-
-    Kept separate from metadata loading on purpose: dropdown options and
-    metrics should keep working even if the model file itself fails to
-    unpickle (e.g. it was saved with a different scikit-learn/numpy version
-    than what's installed).
-    """
     global _model
     if _model is None:
         try:
@@ -52,7 +41,6 @@ def _load_model():
 
 
 def get_options():
-    """Dropdown options + sensible defaults for the prediction form."""
     metadata = _load_metadata()
     return {
         'options': metadata['options'],

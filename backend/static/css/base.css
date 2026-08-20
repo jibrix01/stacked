@@ -61,9 +61,7 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--text-primary);
 }
 
-/* Bar-stack signature mark: echoes the survey's bar charts throughout the
-   app. Flat fills, no gradient — the three bars step up like the pay
-   histograms shown on the dashboard. */
+
 .stack-mark {
   display: inline-flex;
   align-items: flex-end;

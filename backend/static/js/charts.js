@@ -1,6 +1,4 @@
-// Chart.js theme, tied to the same tokens as variables.css. One accent
-// (violet), one secondary data color (teal), and grayscale for everything
-// else - no Inter.
+
 const ChartTheme = {
   accent: '#8a3ffc',
   accentSoft: '#b28cf0',
@@ -11,10 +9,6 @@ const ChartTheme = {
   data2Soft: '#8fb3ae',
   text: '#a8a8a3',
   grid: 'rgba(255,255,255,0.06)',
-  // Categorical palette for multi-series charts (up to ~8 countries/
-  // languages at once): alternating steps of the accent and the
-  // secondary data color, light-to-dark, so adjacent series stay
-  // distinguishable without reaching for arbitrary hues.
   palette: ['#8a3ffc', '#4a8f86', '#b28cf0', '#8fb3ae', '#5c22b8', '#2f5f58', '#d3c0f5', '#c2d6d3'],
 
   baseOptions(overrides = {}) {

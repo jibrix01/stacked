@@ -1,10 +1,4 @@
-"""
-Precomputes every chart the dashboard needs, as small JSON files, by
-reproducing each analysis section of the case-study notebook. Run after
-train_model.py (or independently) whenever the source CSV changes:
 
-    python -m ml.precompute_dashboard /path/to/survey_results_public.csv
-"""
 import json
 import sys
 from pathlib import Path

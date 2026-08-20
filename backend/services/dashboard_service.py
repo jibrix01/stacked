@@ -1,8 +1,3 @@
-"""
-Serves precomputed dashboard chart data. Nothing here touches the raw CSV
-or pandas at request time -- everything is precomputed by
-ml/precompute_dashboard.py and just read + cached in memory here.
-"""
 import json
 
 from config import DASHBOARD_DATA_DIR

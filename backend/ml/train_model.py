@@ -1,13 +1,4 @@
-"""
-Trains the salary-prediction model exactly as in Section 4 of the case-study
-notebook ("Building a Pay Model"), and saves the artifacts the Flask app needs:
 
-  artifacts/model.joblib     - the fitted sklearn Pipeline (Random Forest)
-  artifacts/metadata.json    - dropdown options, CV metrics, feature importance
-
-Run this once (or whenever survey_results_public.csv changes):
-    python -m ml.train_model /path/to/survey_results_public.csv
-"""
 import json
 import sys
 from pathlib import Path

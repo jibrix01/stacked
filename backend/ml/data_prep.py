@@ -1,12 +1,4 @@
-"""
-Shared data-loading and cleaning logic.
 
-This mirrors the cleaning steps from the original case-study notebook
-(stack_overflow_analysis.ipynb) exactly, so the trained model and the
-dashboard stats are always computed from the same underlying dataset.
-Both train_model.py and precompute_dashboard.py import from here instead
-of duplicating this logic (DRY).
-"""
 import numpy as np
 import pandas as pd
 
@@ -51,7 +43,6 @@ def _convert_years(val):
 
 
 def load_and_preprocess_data(filepath: str) -> pd.DataFrame:
-    """Reproduces the notebook's Section: Data Cleaning."""
     df = pd.read_csv(filepath, usecols=USE_COLS)
 
     df_prof = df[df['MainBranch'] == 'I am a developer by profession'].copy()
