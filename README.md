@@ -4,11 +4,11 @@ A web application built on top of the case study **"Stack, or Where You're Stack
 
 Dataset source: [Stack Overflow Annual Developer Survey 2024 (Kaggle)](https://www.kaggle.com/datasets/berkayalan/stack-overflow-annual-developer-survey-2024)
 
-## Application Pages
+## Features
 
-- **Summary / Insights (`/`)**: Summary of the insights obtained in the case study.
-- **Predict (`/predict`)**: Input a profile (years of experience, country, education, work arrangement, languages used) to compute an estimated salary range using a Random Forest model trained on the survey data.
-- **Dashboard (`/dashboard`)**: Interactive charts organized by section (Overview, Pay by Country, Languages, Satisfaction, and The Model).
+- **Summary**: Summary of the insights obtained in the case study.
+- **Predict**: Input a profile (years of experience, country, education, work arrangement, languages used) to compute an estimated salary range using a Random Forest model trained on the survey data.
+- **Dashboard**: Interactive charts organized by section (Overview, Pay by Country, Languages, Satisfaction, and The Model).
 
 ## Project Structure
 
